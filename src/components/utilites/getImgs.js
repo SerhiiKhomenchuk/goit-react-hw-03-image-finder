@@ -18,8 +18,10 @@ export const getImgs = async (searchText, page) => {
 
   try {
     const response = await axios.get(URL);
+
     const { data } = response;
-    const { total, hits } = data;
+    console.log(data);
+    const { totalHits, hits } = data;
     const images = hits.map(({ id, tags, webformatURL, largeImageURL }) => ({
       id,
       tags,
@@ -27,7 +29,7 @@ export const getImgs = async (searchText, page) => {
       largeImageURL,
     }));
 
-    return { totalImages: total, images };
+    return { totalImages: totalHits, images };
   } catch (error) {
     console.log(error);
     throw new Error(error.message);

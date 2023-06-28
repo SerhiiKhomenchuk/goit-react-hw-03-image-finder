@@ -33,6 +33,7 @@ class Searchbar extends Component {
             aria-describedby="inputGroup-sizing-lg"
             value={this.state.value}
             onChange={this.handleChange}
+            placeholder="Search images and photos"
           />
           <button
             type="reset"
