@@ -20,7 +20,7 @@ export const getImgs = async (searchText, page) => {
     const response = await axios.get(URL);
 
     const { data } = response;
-    console.log(data);
+
     const { totalHits, hits } = data;
     const images = hits.map(({ id, tags, webformatURL, largeImageURL }) => ({
       id,
