@@ -31,7 +31,6 @@ export const getImgs = async (searchText, page) => {
 
     return { totalImages: totalHits, images };
   } catch (error) {
-    console.log(error);
     throw new Error(error.message);
   }
 };
